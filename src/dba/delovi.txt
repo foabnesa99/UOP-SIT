@@ -1,0 +1,6 @@
+0|false|VW|Golf|Prednji far|2000
+2|false|BMW|_320|Vetrobransko staklo|13000
+1|false|Peugeot|_307|Prednji levi far|12300
+4|false|VW|Pasat|Poklopac haube|10000
+5|true|Audi|A3|Svecice|4000
+5|false|Opel|Corsa|Vetrobransko staklo|7000

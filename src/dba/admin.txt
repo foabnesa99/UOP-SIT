@@ -1,0 +1,3 @@
+1|true|Dragan|Popovic|2111977551134|Muski|Kralja Petra I 12 Gornji Milanovac|0616234277|drpop|123|91000
+2|true|Mile|Dragic|1312977881151|Muski|Cara Lazara 12 Novi Sad|0628811962|dragicmile|123|950003
+3|false|Nebojsa|Kurilj|2211996880011|Muski|Prvomajska 123 Zemun|0664242111|nkurilj|12345|120000

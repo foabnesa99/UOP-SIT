@@ -1,0 +1,5 @@
+4|false|Nebojsa|Milanovic|90196755999|Muski|Dunavski put 154|0662311251|neb312|123|2
+0|true|Milan|Dragojevic|818124412351|Muski|Cara Dusana 1|0612236621|milance1|1234|3
+2|false|Milan|Drecun|2311965899308|Muski|Prvomajska BB|062331621|mdrecun|1234|7
+5|false|Mladen|Petrovic|1002976651197|Muski|Kralja Petra I 12|022145710|mladja61|123|2
+1|false|Nenad|Dragic|1103966113352|Muski|Prvomajska 12 Novi Sad|062315515|ndrag|123|10

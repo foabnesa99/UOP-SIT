@@ -1,0 +1,4 @@
+0|false|0|VW|Golf|2002|1900|110|Dizel
+1|false|0|BMW|_520|1999|2000|150|Benzin
+2|false|1|Audi|A4|2010|2000|170|Dizel
+3|true|4|Peugeot|_307|2011|1600|90|Metan

@@ -1,0 +1,2 @@
+0|false|Mile|Milenkovic|1106985772311|Muski|Dunavska 11 Beograd|011381775|milem|123|61000|Vulkanizer
+1|false|Petar|Popovic|2111977551134|Muski|Kralja Petra I 12 Gornji Milanovac|0616234277|ppop|123|61000|Limar

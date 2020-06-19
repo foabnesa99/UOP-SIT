@@ -1,0 +1,3 @@
+1|false|VW|Golf|1|2010-01-01T11:11|jkasdjkasdjk|Zakazan|0|4
+2|false|Opel|Insignia|0|2010-02-01T22:11|Odradjeno blabalbal|Zakazan|5|0
+3|true|Audi|A3|0|2010-02-01T22:11|Odradjeno blabalbal|Zakazan|5|0
