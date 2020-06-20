@@ -31,7 +31,7 @@ public class ServisaAuto {
 	private ArrayList<Automobil> auti = new ArrayList<Automobil>();
 	private ArrayList<ServDeo> delovi = new ArrayList<ServDeo>();
 	private ArrayList<ServisAutomobila> servisi = new ArrayList<ServisAutomobila>();
-	private ArrayList<ServKnjizica> knjizica;
+	private ArrayList<ServKnjizica> knjizica = new ArrayList<ServKnjizica>();
 	private ArrayList<Musterija> musterije = new ArrayList<Musterija>();
 	private ArrayList<Serviser> serv = new ArrayList<Serviser>();
 	private ArrayList<Administrator> admini = new ArrayList<Administrator>();
@@ -333,10 +333,7 @@ public class ServisaAuto {
 			System.out.println("Greska pri ucitavanju Servisa");
 			e.printStackTrace();
 		}
-	/*
-	 * int id, boolean obrisan,MarkaVozila marka,ModeliAuto model,Serviser serv,LocalDateTime termin,String opis, 
-		ArrayList<String> delovi, Status status
-	 */
+
 	
 	}
 	
@@ -402,6 +399,99 @@ public class ServisaAuto {
 			}
 		}
 		return null;
+	}
+	
+	public void ucitajKnjizicu() {
+		try {
+			File file = new File("src/dba/servisnaknjizica.txt");
+			
+			ServisaAuto.servis12.ucitajAutomobile();
+			ServisaAuto.servis12.ucitajServis();
+			
+			
+			BufferedReader reader = new BufferedReader(new FileReader(file));
+			String line;
+			
+			while ((line = reader.readLine()) != null) {
+				try {
+				
+				String[] split = line.split("\\|");
+				int i = 0;
+				int id = Integer.parseInt(split[i++]);
+				boolean obrisan = Boolean.parseBoolean(split[i++]);
+				
+				int autoint = Integer.parseInt(split[i++]);
+				Automobil auto = ServisaAuto.servis12.nadjiAuto(autoint);
+				
+				ArrayList<ServisAutomobila> servisi = new ArrayList<ServisAutomobila>();
+				
+				while(i<split.length) {
+					int servid = Integer.parseInt(split[i++]);
+					ServisAutomobila ser = ServisaAuto.servis12.nadjiServis(servid);
+					servisi.add(ser);
+				}
+				
+
+				
+				ServKnjizica novi = new ServKnjizica();
+				novi.setId(id);
+				novi.setObrisan(obrisan);
+				novi.setAuto(auto);
+				novi.setServlista(servisi);
+				
+				servis12.knjizica.add(novi);
+				
+				}
+				 catch (NumberFormatException nfe) { nfe.printStackTrace(); }
+			}
+			reader.close();
+		} catch (IOException e) {
+			System.out.println("Greska pri ucitavanju Servisne Knjizice");
+			e.printStackTrace();
+		}
+	}
+	
+	
+	public void sacuvajKnjizica(ServKnjizica knjiz) {
+		try {
+			File file = new File("src/dba/servisnaknjizica.txt");
+			BufferedWriter br = new BufferedWriter(new FileWriter(file,true));
+			String stringa = "";
+			
+			stringa += knjiz.getId()+ "|" + knjiz.isObrisan() + "|" + knjiz.getAuto().getId() + "|";
+					StringJoiner stringJoiner = new StringJoiner("|");
+					for(ServisAutomobila servis : knjiz.getServlista()) {
+						stringJoiner.add(servis.getId()+"");
+					}
+					stringa+=stringJoiner.toString()+"\n";
+					
+			br.write(stringa);
+			br.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+
+	
+	public void sacuvajKnjizica() {
+		try {
+			File file = new File("src/dba/servisnaknjizica.txt");
+			BufferedWriter br = new BufferedWriter(new FileWriter(file,true));
+			String stringa = "";
+			for(ServKnjizica knjiz : knjizica) {
+			stringa += knjiz.getId()+ "|" + knjiz.isObrisan() + "|" + knjiz.getAuto().getId() + "|";
+					StringJoiner stringJoiner = new StringJoiner("|");
+					for(ServisAutomobila servis : knjiz.getServlista()) {
+						stringJoiner.add(servis.getId()+"");
+					}
+					stringa+=stringJoiner.toString()+"\n";
+			}
+			br.write(stringa);
+			br.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	
@@ -490,6 +580,26 @@ public class ServisaAuto {
 	public ArrayList<ServKnjizica> getKnjizica() {
 		return knjizica;
 	}
+	
+	public void dodajServKnJiz(ServKnjizica knjiz) {
+		this.knjizica.add(knjiz);
+	}
+
+	public void obrisiServKnjiz(ServKnjizica knjiz) {
+		this.knjizica.remove(knjiz);
+	}
+	
+	public ServKnjizica nadjiServKnjiz(int id) {
+		for (ServKnjizica knjiz : knjizica ) {
+			if (knjiz.getId() == id) {
+				return knjiz;
+			}
+		}
+		return null;
+	}
+	
+	
+	
 	
 	public ArrayList<Musterija> getMusterija() {
 		return musterije;
@@ -655,6 +765,13 @@ public void izmeniAuto(Automobil auto) {
 	
 	auti.set(auti.indexOf(auto),auto);
 	sacuvajAuto();
+	
+}
+
+public void izmeniKnjizicu(ServKnjizica knji) {
+	
+	knjizica.set(knjizica.indexOf(knji),knji);
+	sacuvajKnjizica();
 	
 }
 

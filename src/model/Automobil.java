@@ -152,17 +152,9 @@ public class Automobil extends Identifikator {
 	}
 	@Override
 	public String toString() {
-		String s = "Automobil: " + super.toString() + 
-				"\nMusterija: "; 
-				s += "\n" + vlasnik +  
-				"\nMarka Vozila: " + this.marka +
-				"Model Vozila :" + this.model +
-				"Godina proizvodnje:" + this.godProiz+
-				"Zapremina motora:" + this.zaprMotora + 
-				"Snaga motora:" + this.snagaMotora + 
-				"Vrsta goriva:" + this.vrstaGor;
+		
 				
-		return s;
+		return marka + " " + model + " " + vrstaGor;
 	}
 
 

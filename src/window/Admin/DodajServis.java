@@ -38,8 +38,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
-import com.toedter.calendar.JCalendar;
-import com.toedter.calendar.JDateChooser;
+
 import javax.swing.JTextArea;
 import javax.swing.JList;
 
