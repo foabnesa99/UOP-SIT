@@ -2,3 +2,6 @@
 1|false|0|BMW|_520|1999|2000|150|Benzin
 2|false|1|Audi|A4|2010|2000|170|Dizel
 3|true|4|Peugeot|_307|2011|1600|90|Metan
+5|false|1|Opel|Insignia|2010|2000|145|Benzin
+6|false|5|BMW|M3|2011|3500|350|Benzin
+7|false|2|Audi|A6|2002|1900|115|Dizel

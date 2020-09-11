@@ -17,7 +17,7 @@ public class Serviser extends Osoba{
 		super();
 		plata = 0;
 		spec = Specijalizacija.AutoElektrièar;
-		
+		uloga = Uloga.Serviser;
 		
 		
 	}

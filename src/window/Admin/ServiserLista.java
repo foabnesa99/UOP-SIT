@@ -117,9 +117,9 @@ public class ServiserLista extends JDialog {
 	        }
 	    });
 		
-		if (ServisaAuto.servis12.getServ().size()==0)
-			ServisaAuto.servis12.ucitajServisera();
-			serv = ServisaAuto.servis12.getServ();
+		//if (ServisaAuto.servis12.getServ().size()==0)
+			//ServisaAuto.servis12.ucitajServisera();
+		//	serv = ServisaAuto.servis12.getServ();
 		
 		
 		

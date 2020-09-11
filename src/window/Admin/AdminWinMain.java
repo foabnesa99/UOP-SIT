@@ -7,6 +7,9 @@ import javax.swing.JDialog;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+
+import window.LoginWin;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -156,9 +159,21 @@ public class AdminWinMain extends JDialog {
 		menuBar.add(mnNewMenu_3);
 		
 		JMenuItem mntmNewMenuItem_15 = new JMenuItem("Dodavanje servisne knjizice");
+		mntmNewMenuItem_15.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			DodajKnjizica dknj = new DodajKnjizica();
+			dknj.setVisible(true);
+			}
+		});
 		mnNewMenu_3.add(mntmNewMenuItem_15);
 		
 		JMenuItem mntmNewMenuItem_17 = new JMenuItem("Prikaz servisnih knjizica");
+		mntmNewMenuItem_17.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			ListaKnjizica lkn = new ListaKnjizica();
+			lkn.setVisible(true);
+			}
+		});
 		mnNewMenu_3.add(mntmNewMenuItem_17);
 		
 		JMenu mnNewMenu_4 = new JMenu("Delovi");
@@ -185,12 +200,17 @@ public class AdminWinMain extends JDialog {
 		mnNewMenu_4.add(mntmNewMenuItem_20);
 		
 		JMenu mnNewMenu_8 = new JMenu("KRAJ");
+		mnNewMenu_8.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+			}
+		});
 		menuBar.add(mnNewMenu_8);
 		
 		JMenuItem mntmNewMenuItem_21 = new JMenuItem("Izadji");
 		mntmNewMenuItem_21.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-			dispose();
+				System.exit(1);
 			}
 		});
 		mnNewMenu_8.add(mntmNewMenuItem_21);

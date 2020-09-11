@@ -11,7 +11,7 @@ public class Musterija extends Osoba{
 	public Musterija() {
 		super();
 		nagrBodovi = 0;
-		
+		uloga = Uloga.Musterija;
 	}
 	public Musterija(int id,boolean obrisan,String ime, String prezime, long jmbg, String pol, String adresa, String brTelefona, String username,
 			String password, short nagrBodovi) {

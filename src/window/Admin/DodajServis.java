@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.MaskFormatter;
 
 import model.Automobil;
 import model.Musterija;
@@ -32,15 +33,19 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
 import javax.swing.JTextArea;
 import javax.swing.JList;
+import javax.swing.JFormattedTextField;
 
 public class DodajServis extends JDialog {
 	
@@ -65,6 +70,8 @@ public class DodajServis extends JDialog {
 		private ArrayList<ServisAutomobila> servisi = new ArrayList<ServisAutomobila>();
 		private JLabel lbID;
 		private JLabel lbDat;
+		  private static String format = "(\\d\\d:\\d\\d) (\\d{2}.\\d{2}.\\d{4})";
+
 		/**
 		 * Launch the application.
 		 */
@@ -276,13 +283,33 @@ public class DodajServis extends JDialog {
 			lbDat.setBounds(349, 279, 16, 14);
 			contentPanel.add(lbDat);
 			lbDat.setVisible(false);
+
+			
+			
+
+		
+		
 		}
 
 		public boolean validacija() {
 			boolean provera = true;	
 			String poruka = "";
+			Pattern r = Pattern.compile(format);
+		    Matcher m = r.matcher(txtTermin.getText());
+			
 			while(true) {
-			if(txtID.getText().isEmpty()) {
+			
+				
+			    if (m.matches())
+			    {
+			      provera = true;
+			    }
+			    else {
+			    	provera = false;
+				      poruka +="-Datum servisa mora biti u formatu HH:MM dd.mm.yyyy \n";
+			    	
+			    }
+			    if(txtID.getText().isEmpty()) {
 					lbID.setVisible(true);
 					provera = false;
 					}

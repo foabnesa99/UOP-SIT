@@ -139,7 +139,7 @@ public class ListaAuto extends JDialog {
 	        }
 	    });
 		
-		ServisaAuto.servis12.ucitajMusteriju();
+	//	ServisaAuto.servis12.ucitajMusteriju();
 		if (ServisaAuto.servis12.getAuti().size()==0)
 			ServisaAuto.servis12.ucitajAutomobile();
 			auti = ServisaAuto.servis12.getAuti();

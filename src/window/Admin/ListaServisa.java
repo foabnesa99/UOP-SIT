@@ -132,7 +132,7 @@ public class ListaServisa extends JDialog {
 			servisi = ServisaAuto.servis12.getServis();
 		
 		ServisaAuto.servis12.ucitajAutomobile();
-		ServisaAuto.servis12.ucitajDeo();
+	//	ServisaAuto.servis12.ucitajDeo();
 		ServisaAuto.servis12.ucitajServisera();
 		
 		for (int i = 0; i < servisi.size(); i++){

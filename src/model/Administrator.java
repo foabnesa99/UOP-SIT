@@ -1,12 +1,12 @@
 package model;
-
+import model.Uloga;
 public class Administrator extends Osoba{
 	private int plata;
 	
 	public Administrator() {
 		super();
 		plata = 0;
-		
+		uloga = Uloga.Administrator;
 	}
 	
 	public Administrator(int id,boolean obrisan,String ime, String prezime, long jmbg, String pol, String adresa, String brTelefona, String username,

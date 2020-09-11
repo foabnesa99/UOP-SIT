@@ -7,10 +7,13 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
+import window.LoginWin;
 import window.Admin.DodajDeo;
+import window.Admin.DodajKnjizica;
 import window.Admin.DodajServis;
 import window.Admin.ListaAuto;
 import window.Admin.ListaDelova;
+import window.Admin.ListaKnjizica;
 import window.Admin.ListaMust;
 import window.Admin.ListaServisa;
 import window.Admin.ServiserLista;
@@ -123,10 +126,22 @@ public class ServiserWinMain extends JDialog {
 		JMenu menu_6 = new JMenu("Servisna Knjizica");
 		menuBar.add(menu_6);
 		
-		JMenuItem menuItem_16 = new JMenuItem("Izmena servisne knjizice");
-		menu_6.add(menuItem_16);
+		JMenuItem mntmDodavanjeServisneKnjizice = new JMenuItem("Dodavanje servisne knjizice");
+		mntmDodavanjeServisneKnjizice.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			DodajKnjizica dkn = new DodajKnjizica();
+			dkn.setVisible(true);
+			}
+		});
+		menu_6.add(mntmDodavanjeServisneKnjizice);
 		
 		JMenuItem menuItem_17 = new JMenuItem("Prikaz servisnih knjizica");
+		menuItem_17.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			ListaKnjizica lkn = new ListaKnjizica();
+			lkn.setVisible(true);	
+			}
+		});
 		menu_6.add(menuItem_17);
 		
 		JMenu menu_7 = new JMenu("Delovi");
@@ -158,7 +173,7 @@ public class ServiserWinMain extends JDialog {
 		JMenuItem menuItem_21 = new JMenuItem("Izadji");
 		menuItem_21.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			dispose();
+				System.exit(1);
 			}
 		});
 		menu_8.add(menuItem_21);

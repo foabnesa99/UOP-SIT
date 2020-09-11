@@ -1,3 +1,4 @@
 1|false|VW|Golf|1|2010-01-01T11:11|jkasdjkasdjk|Zakazan|0|4
 2|false|Opel|Insignia|0|2010-02-01T22:11|Odradjeno blabalbal|Zakazan|5|0
-3|true|Audi|A3|0|2010-02-01T22:11|Odradjeno blabalbal|Zakazan|5|0
+3|false|Audi|A3|0|2010-02-01T22:11|Odradjeno blabalbal|Zakazan|5|0
+5|false|BMW|_320|1|2020-01-20T10:50|Zamena stakla vetrobran|Zakazan|2

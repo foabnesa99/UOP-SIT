@@ -25,6 +25,7 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JPasswordField;
 import model.Musterija;
+import model.Osoba;
 import model.Administrator;
 import model.Serviser;
 
@@ -32,9 +33,13 @@ import model.Serviser;
 
 public class LoginWin extends JDialog {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private final JPanel contentPanel = new JPanel();
 	private JTextField korisnickoTxt;
-	
+	public static Osoba currentUser;
 	private JPasswordField passwordTxt;
 	
 
@@ -61,7 +66,7 @@ public class LoginWin extends JDialog {
 		ServisaAuto.servis12.ucitajDeo();
 		ServisaAuto.servis12.ucitajMusteriju();
 		ServisaAuto.servis12.ucitajServis();
-		ServisaAuto.servis12.ucitajServisera();
+	//	ServisaAuto.servis12.ucitajServisera();
 		
 		
 		setBounds(100, 100, 450, 391);
@@ -82,23 +87,27 @@ public class LoginWin extends JDialog {
 				String pass = new String(passwordTxt.getPassword()).trim();
 					if(ServisaAuto.servis12.LoginMusterija(username, pass)) {
 						MainMusterija mst = new MainMusterija();
+						
 						mst.setVisible(true);
+						dispose();
 					}
 					else if(ServisaAuto.servis12.LoginServiser(username, pass)) {
 						ServiserWinMain ser = new ServiserWinMain();
 						ser.setVisible(true);
-						
+						dispose();
 					}
 					else if(ServisaAuto.servis12.LoginAdmin(username, pass)) {
 						AdminWinMain adm = new AdminWinMain();
 						adm.setVisible(true);
-						
+						dispose();
 					}
-					else
+					else {
 						JOptionPane.showMessageDialog(getContentPane(), "Korisnicki podaci nisu ispravni!");
-						
+						korisnickoTxt.setText("");
+						passwordTxt.setText("");
+					}
 			
-			dispose();
+			
 			
 			}
 		});

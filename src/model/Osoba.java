@@ -1,7 +1,7 @@
 package model;
 
 import java.util.StringJoiner;
-
+import model.Uloga;
 public class Osoba extends Identifikator{
 
 	protected String ime;
@@ -12,7 +12,7 @@ public class Osoba extends Identifikator{
 	protected String brTelefona;
 	protected String username;
 	protected String password;
-
+	protected Uloga uloga;
 	public Osoba(int id,boolean obrisan,String ime ,String prezime, long jmbg, String pol,String adresa ,String brTelefona, String username,
 			String password) {
 		super(id,obrisan);
@@ -26,7 +26,9 @@ public class Osoba extends Identifikator{
 		this.password = password;
 
 	}
+	
 
+	
 	public String getIme() {
 		return ime;
 	}

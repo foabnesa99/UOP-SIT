@@ -54,8 +54,8 @@ public class ListaDelova extends JDialog {
 		setTitle("Prikaz svih delova");
 		setBounds(100, 100, 530, 500);
 		getContentPane().setLayout(null);
-		ServisaAuto.servis12.ucitajAutomobile();
-		delovi = ServisaAuto.servis12.getDelovi();
+	//	ServisaAuto.servis12.ucitajAutomobile();
+	//	delovi = ServisaAuto.servis12.getDelovi();
 		String kolone[] = {"ID", "Marka" , "Model" , "Naziv" ,"Cena"};
 
 		DefaultTableModel tableModel = new DefaultTableModel(kolone, 0);
@@ -129,8 +129,8 @@ public class ListaDelova extends JDialog {
 		
 		
 		
-		if (ServisaAuto.servis12.getDelovi().size()==0)
-			ServisaAuto.servis12.ucitajDeo();
+		//if (ServisaAuto.servis12.getDelovi().size()==0)
+			//ServisaAuto.servis12.ucitajDeo();
 			delovi = ServisaAuto.servis12.getDelovi();
 		
 		
